@@ -14,6 +14,8 @@ import { ServicesModule } from './services/services.module';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'portfolio', component: PortfolioComponent },
+  { path: 'services', redirectTo: '/services/web', pathMatch: 'full' },
+  { path: 'services', loadChildren: () => import('./services/services.module').then(m => m.ServicesModule) },
   { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: '/' },
 ];
