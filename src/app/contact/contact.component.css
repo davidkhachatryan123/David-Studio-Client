@@ -1,0 +1,61 @@
+.content-form {
+	background-color: var(--color-background);
+}
+
+.done {
+	display: none;
+}
+
+.error input, input.error, .error textarea, textarea.error {
+	background-color: #ffffff;
+	border-bottom: 2px solid orangered !Important;
+	
+	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+	   -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+	     -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+	    -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+	        transition: border linear 0.2s, box-shadow linear 0.2s;
+
+	will-change: transform;
+}
+
+#contactform input, #contactform textarea {
+	width: 100%;
+
+	border: 0px;
+	border-bottom: 2px solid var(--color-light);
+
+	background-color: transparent;
+	color: var(--color-light);
+	caret-color: var(--color-light);
+
+  padding: 20px 0px;
+	margin-bottom: 20px;
+
+	text-transform: none;
+	letter-spacing: 2px;
+
+	resize: none;
+}
+
+#contactform input#submit {
+	color: var(--color-light);
+	width: auto;
+	border: 2px solid;
+	padding: 10px 20px;
+	display: inline-block;
+}
+
+#contactform input#submit:hover {
+	background-color: var(--color-light);
+	color: var(--color-dark);
+	border: 2px solid var(--color-light);
+}
+
+#contactform input:focus, #contactform input:active, #contactform textarea:focus, #contactform textarea:active {
+	border-bottom: 2px solid var(--accent-color);
+	border-top: 0px;
+
+	outline: 0;
+	outline: none;
+}

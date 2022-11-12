@@ -1,0 +1,206 @@
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <a class="navbar-brand" href="Home.html">
+                <img src="assets/img/logo-no-background.png" height="50" class="inline-block">
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a href="Home.html">Գլխավոր</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Portfolio.html">Պորտֆոլիո</a>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-services btn-group">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ծառայություններ
+                            <i class="fa fa-angle-down"></i>
+                        </button>
+
+                        <div class="dropdown-menu" id="dropdown-menu">
+                            <ul>
+                                <li class="dropdown-item">
+                                    <div class="image">
+                                        <img src="assets/img/Service/web.png" class="img-responsive flex-item">
+                                    </div>
+                                    <a href="Service-Web.html" class="flex-item">Web</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <div class="image">
+                                        <img src="assets/img/Service/desktop.png" class="img-responsive flex-item">
+                                    </div>
+                                    <a href="Service-Desktop.html" class="flex-item">Desktop</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <div class="image">
+                                        <img src="assets/img/Service/arduino.png" class="img-responsive flex-item">
+                                    </div>
+                                    <a href="Service-Arduino.html" class="flex-item">Arduino</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <div class="image">
+                                        <img src="assets/img/Service/server.png" class="img-responsive flex-item">
+                                    </div>
+                                    <a href="Service-Hosting.html" class="flex-item">Hosting</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="Contact.html">Կապ</a>
+                </li>
+                <li class="nav-item">
+                    <div class="lang btn-group">
+                        <button type="button" style="background-image: url('assets/img/Flags/armenia-flag-square-small.png');" class="btn dropdown-toggle logo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;</button>
+
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li class="dropdown-item">
+                                    <div class="image">
+                                        <img src="assets/img/Flags/armenia-flag-square-small.png" class="img-responsive flex-item">
+                                    </div>
+                                    <a href="#" class="flex-item">Հայերեն</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <div class="image">
+                                        <img src="assets/img/Flags/russia-flag-square-small.png" class="img-responsive flex-item">
+                                    </div>
+                                    <a href="#" class="flex-item">Русский</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="intro" style="background-image: radial-gradient(circle at 50% 50%,rgba(0,0,0,0.46),rgba(0,0,0,0.88)),url('assets/img/Hexagon.svg');">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">David Studio</h1>
+
+                    <p class="intro-text">Կպատրաստենք ծրագրեր ցանկացած տեսակի</p>
+
+                    <a href="#page" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="content">
+    <main id="page">
+        <router-outlet>
+            
+        </router-outlet>
+    </main>
+
+    <button id="phoneBtn" class="btn" data-toggle="modal" data-target="#callModal">
+        <i class="fa fa-phone"></i>
+    </button>
+
+    <div id="callModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">x</button>
+                    <h4 class="modal-title">Զանգահարել</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12">
+                            <a href="tel:+37441214803">
+                                <i class="fa fa-phone"></i>
+                                &nbsp;&nbsp;+374 41 214-803
+                            </a>
+                            <br>
+                            <a href="tel:+37477214803">
+                                <i class="fa fa-phone"></i>
+                                &nbsp;&nbsp;+374 77 214-803
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-dismiss="modal">Փակել</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12 text-left">
+                    <a href="tel:+37441214803">
+                        <i class="fa fa-phone"></i>
+                        &nbsp;&nbsp;+374 41 214-803
+                    </a>
+                    <br>
+                    <a href="tel:+37477214803">
+                        <i class="fa fa-phone"></i>
+                        &nbsp;&nbsp;+374 77 214-803
+                    </a>
+                </div>
+                <div class="col-sm-6 col-xs-12 text-right">
+                    <a href="mailto:info@davidstudio.am">
+                        <i class="fa fa-envelope"></i>
+                        &nbsp;&nbsp;info@davidstudio.am
+                    </a>
+                </div>
+            </div>
+            
+            <br>
+            
+            <div class="row">
+                <div class="col-md-2 col-md-offset-5 
+                            col-xs-8 col-xs-offset-2
+                            col-sm-4 col-sm-offset-4">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-3">
+                            <a href="https://github.com/davidkhachatryan123" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <a href="#" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <a href="#" target="_blank">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <a href="https://t.me/dav1d_khachatryan" target="_blank">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <p class="credits text-center">
+                &copy; 2022 David Studio. Բոլոր իրավունքները պաշտպանված են:
+            </p>
+        </div>
+    </footer>
+</section>

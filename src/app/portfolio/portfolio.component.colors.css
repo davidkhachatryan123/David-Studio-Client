@@ -1,0 +1,78 @@
+.html {
+  background-color: var(--color-html);
+}
+
+.css {
+  background-color: var(--color-css);
+}
+
+.js {
+  background-color: var(--color-js);
+}
+
+.bootstrap {
+  background-color: var(--color-bootstrap);
+}
+
+.angular {
+  background-color: var(--color-angular);
+}
+
+.aspnet {
+  background-color: var(--color-aspnet);
+}
+
+.ef {
+  background-color: var(--color-ef);
+}
+
+.mysql {
+  background-color: var(--color-mysql);
+}
+
+.mssql {
+  background-color: var(--color-mssql);
+}
+
+
+.cs {
+  background-color: var(--color-cs);
+}
+
+.wpf {
+  background-color: var(--color-wpf);
+}
+
+.winforms {
+  background-color: var(--color-winforms);
+}
+
+.cpp {
+  background-color: var(--color-cpp);
+}
+
+.bash {
+  background-color: var(--color-bash);
+}
+
+
+.arduino {
+  background-color: var(--color-arduino);
+}
+
+.iot {
+  background-color: var(--color-iot);
+}
+
+.pcb {
+  background-color: var(--color-pcb);
+}
+
+
+.dedicated {
+  background-color: var(--color-dedicated);
+}
+
+.cloud {
+  background-color: var(--color-cloud);
+}

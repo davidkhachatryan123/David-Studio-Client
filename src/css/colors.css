@@ -1,0 +1,21 @@
+:root {
+  --color-html: #f16529;
+  --color-css: #35a9db;
+  --color-js: #f5de19;
+  --color-bootstrap: #8412fb;
+  --color-angular: #e23237;
+  --color-aspnet: #6c429c;
+  --color-ef: #68217a;
+  --color-mysql: #5d87a1;
+  --color-mssql: #dd2f29;
+  --color-cs: #8d3aa3;
+  --color-wpf: #f27979;
+  --color-winforms: #fdc641;
+  --color-cpp: #005494;
+  --color-bash: #49a023;
+  --color-arduino: #008f94;
+  --color-iot: #e8d247;
+  --color-pcb: #02a75c;
+  --color-dedicated: #ffd662;
+  --color-cloud: #fe9b07;
+}

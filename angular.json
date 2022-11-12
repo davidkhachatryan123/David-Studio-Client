@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "projects": {
+    "davidstudio": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/davidstudio",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.json",
+            "assets": ["src/assets"],
+            "styles": [ "bootstrap/bootstrap.min.css",
+                        "fontawesome-free-6.2.0-web/css/all.min.css",
+                        "src/css/style.css", "src/css/colors.css", "src/css/circle/circle.css", "src/css/circle/circle.colors.css" ],
+            "scripts": [ "jquery/jquery.js", "jquery/jquery.easing.min.js",
+                         "bootstrap/bootstrap.min.js",
+                         "src/js/main.js" ],
+            "aot": true
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "davidstudio:build"
+          }
+        }
+      }
+    }},
+  "defaultProject": "davidstudio",
+  "cli": {
+    "analytics": "627ce7c8-7032-40f1-abbb-7a901a2985a5"
+  }
+}

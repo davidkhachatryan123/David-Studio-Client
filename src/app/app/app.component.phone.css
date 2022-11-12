@@ -1,0 +1,46 @@
+#phoneBtn {
+  display: block;
+  position: fixed;
+
+  bottom: 2vh;
+  right: 3vw;
+  z-index: 100;
+  
+  border-radius: 100px;
+  border: none;
+  outline: none;
+
+  font-size: 30px;
+  background-color: var(--accent-color);
+  color: var(--color-light);
+
+  cursor: pointer;
+
+  width: 80px;
+  height: 80px;
+}
+
+#phoneBtn:hover {
+  background-color: var(--color-dark);
+}
+
+#callModal .modal-dialog .modal-content {
+  background-color: var(--color-background);
+  color: var(--color-light);
+
+  text-align: center;
+}
+
+#callModal .modal-dialog .modal-content .fa {
+  color: var(--accent-color);
+}
+
+#callModal a, #callModal a:focus {
+  color: var(--color-light);
+  font-size: 20px;
+  line-height: 40px;
+}
+
+#callModal a:hover {
+  color: var(--color-dark);
+}

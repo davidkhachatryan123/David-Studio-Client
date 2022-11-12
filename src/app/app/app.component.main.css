@@ -1,0 +1,18 @@
+.content {
+  position: relative;
+  top: 50vh;
+
+  background-color: var(--color-dark);
+}
+
+@media(min-width:768px) {
+  .content {
+    top: 100vh;
+  }
+}
+
+@media(max-height: 570px) {
+  .content {
+      top: 100vh;
+  }
+}

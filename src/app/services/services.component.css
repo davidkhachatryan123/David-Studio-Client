@@ -1,0 +1,41 @@
+.service {
+  background-color: var(--color-background);
+  color: var(--color-light);
+
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  text-transform: none;
+  color: var(--color-light);
+}
+
+.introduction p {
+  text-align: center;
+  margin: 0;
+}
+
+@media(min-width:768px) {
+  .service p {
+      text-indent: 35px;
+      text-align: left;
+      margin: 0 150px;
+  }
+}
+
+.portfolio-link {
+  background-color: var(--color-dark);
+
+  padding: 20px 0;
+}
+
+.portfolio-link .container {
+  flex-direction: column;
+}
+
+.portfolio-link a {
+  margin-top: 20px;
+
+  width: 200px;
+}

@@ -1,0 +1,41 @@
+footer {
+  z-index: 50;
+  position: relative;
+  clear: both;
+  background-color: var(--color-black);
+  padding: 20px 0px;
+
+  border-top: 2px solid var(--hr-color);
+}
+
+footer .fa {
+  color: var(--accent-color);
+}
+
+footer a, a:focus {
+  color: var(--color-light);
+  font-size: 20px;
+}
+
+footer a:hover {
+  color: var(--color-dark);
+}
+
+footer hr {
+  border-top: 1px solid var(--hr-color);
+  border-color: initial;
+}
+
+footer p.credits {
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 3px;
+  margin: 0px;
+}
+
+@media (max-width:768px) {
+  footer .text-left, .text-right {
+      text-align: center;
+  }
+}
