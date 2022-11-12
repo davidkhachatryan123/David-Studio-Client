@@ -66,8 +66,8 @@
 
 .portfolio .filter .prog_language .text {
   flex-basis: 100px;
-  
   text-align: center;
+  color: white;
 }
 
 .portfolio .filter .prog_language .x {
@@ -196,6 +196,7 @@
 
   font-size: 15px;
   margin: 5px 5px;
+  color: white;
 }
 
 @media(min-width:768px) {
