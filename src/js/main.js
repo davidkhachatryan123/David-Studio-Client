@@ -30,4 +30,10 @@ $( document ).ready(function() {
     $('.navbar-collapse a').click(function() {
         $('.navbar-toggle:visible').click();
     });
+
+    let navbar_a = document.getElementsByClassName('navbar-collapse')[0];
+    //console.log(navbar_a);
+    navbar_a.addEventListener('touchend', function(e) {
+        $('.navbar-toggle:visible').click();
+    }, false);
 });
