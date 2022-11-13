@@ -18,10 +18,10 @@ $(window).scroll(function() {
 });
 
 // Get vh value
-function vh(percent) {
+/*function vh(percent) {
     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     return (percent * h) / 100;
-}
+}*/
 
 // jQuery to add padding for path
 $( document ).ready(function() {

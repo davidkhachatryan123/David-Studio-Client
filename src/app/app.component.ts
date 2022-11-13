@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationStart, ChildrenOutletContexts } from '@angular/router';
+
+declare var $: any;
 
 @Component({
   selector: 'app-root',
@@ -7,5 +10,21 @@ import { Component } from '@angular/core';
                "./app-css/app.component.intro.css", "./app-css/app.component.phone.css",
                "./app-css/app.component.footer.css" ]
 })
+export class AppComponent implements OnInit {
+  constructor(private router: Router, private contexts: ChildrenOutletContexts) { }
 
-export class AppComponent {}
+  ngOnInit() {
+    this.router.events.subscribe((ev: any) => {
+      if(ev instanceof NavigationStart && window.scrollY != 0) {
+
+        $('html, body').stop().animate({
+          scrollTop: 0
+        }, 500, 'easeInOutExpo');
+      }
+    });
+  }
+
+  getRouteAnimationData() {
+    return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
+  }
+}

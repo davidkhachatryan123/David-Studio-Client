@@ -22,7 +22,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [ BrowserModule, ReactiveFormsModule, HttpClientModule,
-             RouterModule.forRoot(appRoutes, { scrollPositionRestoration: 'enabled' }),
+             RouterModule.forRoot(appRoutes),
              ServicesModule ],
   declarations: [ AppComponent,
                   HomeComponent, PortfolioComponent, ContactComponent ],
