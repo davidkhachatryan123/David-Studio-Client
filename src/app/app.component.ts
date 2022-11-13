@@ -22,12 +22,14 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.router.events.subscribe((ev: any) => {
-      if(ev instanceof NavigationStart && window.scrollY != 0) {
+      if(ev instanceof NavigationStart) {
+        if (window.scrollY != 0) {
 
-        $('html, body').stop().animate({
-          scrollTop: 0
-        }, 500, 'easeInOutExpo');
-        
+          $('html, body').stop().animate({
+            scrollTop: 0
+          }, 500, 'easeInOutExpo');
+
+        }
       }
     });
 
