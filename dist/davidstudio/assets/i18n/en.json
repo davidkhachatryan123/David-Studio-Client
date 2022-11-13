@@ -1,4 +1,7 @@
 {
+  "title": {
+    "home": "Home"
+  },
   "template": {
     "title": "David Studio",
     "subtitle": "We will prepare a program of any complexity"
