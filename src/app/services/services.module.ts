@@ -10,10 +10,10 @@ import { ArduinoComponent } from './arduino/arduino.component';
 import { HostingComponent } from './hosting/hosting.component';
 
 const appRoutes: Routes = [
-  { path: 'web', component: WebComponent },
-  { path: 'desktop', component: DesktopComponent },
-  { path: 'arduino', component: ArduinoComponent },
-  { path: 'hosting', component: HostingComponent },
+  { path: 'web', component: WebComponent, title: 'Web' },
+  { path: 'desktop', component: DesktopComponent, title: 'Desktop' },
+  { path: 'arduino', component: ArduinoComponent, title: 'Arduino' },
+  { path: 'hosting', component: HostingComponent, title: 'Hosting' },
 ];
 
 @NgModule({

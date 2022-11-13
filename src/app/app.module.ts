@@ -13,11 +13,11 @@ import { ServicesModule } from './services/services.module';
 import { TranslocoRootModule } from './transloco-root.module';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'portfolio', component: PortfolioComponent },
+  { path: '', component: HomeComponent, title: 'Home' },
+  { path: 'portfolio', component: PortfolioComponent, title: 'Portfolio' },
   { path: 'services', redirectTo: '/services/web', pathMatch: 'full' },
   { path: 'services', loadChildren: () => import('./services/services.module').then(m => m.ServicesModule) },
-  { path: 'contact', component: ContactComponent },
+  { path: 'contact', component: ContactComponent, title: 'Contact' },
   { path: '**', redirectTo: '/' },
 ];
 
