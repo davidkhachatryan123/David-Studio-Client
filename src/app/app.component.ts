@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationStart, ChildrenOutletContexts } from '@angular/router';
+import { Router, NavigationStart } from '@angular/router';
+import { TranslocoService } from '@ngneat/transloco';
+import { CookieService } from 'ngx-cookie-service';
 
 declare var $: any;
 
@@ -8,10 +10,15 @@ declare var $: any;
   templateUrl: './app.component.html',
   styleUrls: [ "./app-css/app.component.main.css", "./app-css/app.component.navbar.css",
                "./app-css/app.component.intro.css", "./app-css/app.component.phone.css",
-               "./app-css/app.component.footer.css" ]
+               "./app-css/app.component.footer.css" ],
+  providers: [ CookieService ]
 })
 export class AppComponent implements OnInit {
-  constructor(private router: Router, private contexts: ChildrenOutletContexts) { }
+  language: string;
+
+  constructor(private router: Router,
+              private translocoService: TranslocoService,
+              private cookie: CookieService) { }
 
   ngOnInit() {
     this.router.events.subscribe((ev: any) => {
@@ -20,11 +27,18 @@ export class AppComponent implements OnInit {
         $('html, body').stop().animate({
           scrollTop: 0
         }, 500, 'easeInOutExpo');
+        
       }
     });
+
+    this.language = this.cookie.get('lang');
+    this.changeSiteLanguage(this.language);
   }
 
-  getRouteAnimationData() {
-    return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
+  changeSiteLanguage(language: string): void {
+    this.translocoService.setActiveLang(language);
+
+    this.language = language;
+    this.cookie.set('lang', language, 1);
   }
 }

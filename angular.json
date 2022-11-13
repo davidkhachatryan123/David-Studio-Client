@@ -15,13 +15,23 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.json",
             "assets": ["src/assets"],
-            "styles": [ "bootstrap/bootstrap.min.css",
-                        "fontawesome-free-6.2.0-web/css/all.min.css",
-                        "src/css/style.css", "src/css/colors.css", "src/css/circle/circle.css", "src/css/circle/circle.colors.css" ],
+            "styles": [ "bootstrap/bootstrap.min.css", "fontawesome-free-6.2.0-web/css/all.min.css",
+                        "src/css/style.css", "src/css/colors.css", "src/css/circle/circle.css", "src/css/circle/circle.colors.css"
+                         ],
             "scripts": [ "jquery/jquery.js", "jquery/jquery.easing.min.js",
                          "bootstrap/bootstrap.min.js",
                          "src/js/main.js" ],
             "aot": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            }
           }
         },
         "serve": {

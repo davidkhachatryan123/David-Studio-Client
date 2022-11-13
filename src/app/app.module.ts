@@ -10,6 +10,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { ServicesModule } from './services/services.module';
+import { TranslocoRootModule } from './transloco-root.module';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [ BrowserModule, ReactiveFormsModule, HttpClientModule,
              RouterModule.forRoot(appRoutes),
-             ServicesModule ],
+             ServicesModule,
+             TranslocoRootModule ],
   declarations: [ AppComponent,
                   HomeComponent, PortfolioComponent, ContactComponent ],
   providers: [ Title ],

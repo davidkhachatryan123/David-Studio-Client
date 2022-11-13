@@ -6,9 +6,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build"
+    "build": "ng build",
+    "build-prod": "ng build --configuration production"
   },
   "dependencies": {
+    "@angular/animations": "~14.0.0",
     "@angular/common": "~14.0.0",
     "@angular/compiler": "~14.0.0",
     "@angular/core": "~14.0.0",
@@ -16,8 +18,8 @@
     "@angular/platform-browser": "~14.0.0",
     "@angular/platform-browser-dynamic": "~14.0.0",
     "@angular/router": "~14.0.0",
-    "@angular/animations": "~14.0.0",
     "@ngneat/transloco": "^4.1.1",
+    "ngx-cookie-service": "^14.0.1",
     "rxjs": "~7.4.0",
     "zone.js": "~0.11.4"
   },

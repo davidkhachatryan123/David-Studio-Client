@@ -60,7 +60,9 @@
                 </li>
                 <li class="nav-item">
                     <div class="lang btn-group">
-                        <button type="button" style="background-image: url('assets/img/Flags/armenia-flag-square-small.png');" class="btn dropdown-toggle logo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;</button>
+                        <button *ngIf="language === 'am'" type="button" style="background-image: url('assets/img/Flags/armenia-flag-square-small.png');" class="btn dropdown-toggle logo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;</button>
+                        <button *ngIf="language === 'ru'" type="button" style="background-image: url('assets/img/Flags/russia-flag-square-small.png');" class="btn dropdown-toggle logo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;</button>
+                        <button *ngIf="language === 'en'" type="button" style="background-image: url('assets/img/Flags/usa-flag-square-small.png');" class="btn dropdown-toggle logo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;</button>
 
                         <div class="dropdown-menu">
                             <ul>
@@ -68,13 +70,19 @@
                                     <div class="image">
                                         <img src="assets/img/Flags/armenia-flag-square-small.png" class="img-responsive flex-item">
                                     </div>
-                                    <a href="#" class="flex-item">Հայերեն</a>
+                                    <a (click)="changeSiteLanguage('am')" class="flex-item">Հայերեն</a>
                                 </li>
                                 <li class="dropdown-item">
                                     <div class="image">
                                         <img src="assets/img/Flags/russia-flag-square-small.png" class="img-responsive flex-item">
                                     </div>
-                                    <a href="#" class="flex-item">Русский</a>
+                                    <a (click)="changeSiteLanguage('ru')" class="flex-item">Русский</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <div class="image">
+                                        <img src="assets/img/Flags/usa-flag-square-small.png" class="img-responsive flex-item">
+                                    </div>
+                                    <a (click)="changeSiteLanguage('en')" class="flex-item">English</a>
                                 </li>
                             </ul>
                         </div>
@@ -90,9 +98,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h1 class="brand-heading">David Studio</h1>
+                    <h1 class="brand-heading">{{ "template.title" | transloco }}</h1>
 
-                    <p class="intro-text">Կպատրաստենք ծրագրեր ցանկացած տեսակի</p>
+                    <p class="intro-text">{{ "template.subtitle" | transloco }}</p>
 
                     <a href="#page" class="btn btn-circle page-scroll">
                         <i class="fa fa-angle-double-down animated"></i>
