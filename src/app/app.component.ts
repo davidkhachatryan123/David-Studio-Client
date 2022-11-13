@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     });
 
     this.language = this.cookie.get('lang');
-    if(this.language === undefined) {
+    if(this.language === '') {
       this.cookie.set('lang', 'am', 1);
       this.language = 'am';
     }
