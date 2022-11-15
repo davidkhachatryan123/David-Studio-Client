@@ -10,7 +10,9 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { ServicesModule } from './services/services.module';
-import { TranslocoRootModule } from './transloco-root.module';
+import { TranslocoRootModule } from './tools/transation/transloco-root.module';
+
+import { IntroContentService } from './tools/services/intro-content.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, title: 'Home' },
@@ -28,7 +30,7 @@ const appRoutes: Routes = [
              TranslocoRootModule ],
   declarations: [ AppComponent,
                   HomeComponent, PortfolioComponent, ContactComponent ],
-  providers: [ Title ],
+  providers: [ Title, IntroContentService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
