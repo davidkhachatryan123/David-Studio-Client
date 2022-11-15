@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
       this.introContentService.getData(this.router.url)[0].subscribe(value => this.title = value);
-      this.introContentService.getData(this.router.url)[1].subscribe(value => this.subtitle = value); 
+      this.introContentService.getData(this.router.url)[1].subscribe(value => this.subtitle = value);
     });
 
     this.getSiteLanguage();
