@@ -18,6 +18,24 @@
 
   width: 80px;
   height: 80px;
+
+  transition-property: transform;
+  animation: tiltAnimation 10s infinite ease-in-out;
+
+  will-change: transform;
+}
+
+@keyframes tiltAnimation {
+  1% {
+    transform: translateY(-15px);
+  }
+
+  2%, 4%, 6% {
+    transform: rotate(30deg);
+  }
+  3%, 5%, 7% {
+    transform: rotate(0deg);
+  }
 }
 
 #phoneBtn:hover {

@@ -24,10 +24,6 @@
   margin-bottom: 20px;
 }
 
-.services .service .service__img_right {
-  margin: 0;
-}
-
 @media(min-width:768px) {
   .services {
     text-align: inherit;
@@ -35,6 +31,8 @@
 
   .services p {
     text-indent: 15px;
+
+    padding-bottom: 50px;
   }
 
   .services .service__content a {
@@ -45,18 +43,10 @@
     bottom: 0;
   }
 
-  .services .service .service__img_right {
-    justify-content: end;
-    align-items: flex-end;
-  }
-
   .services .service img {
     margin: 0 -10px;
   }
-  
-  .services .service .service__img_right img {
-    margin: 0 10px;
-  }
+
 }
 
 
