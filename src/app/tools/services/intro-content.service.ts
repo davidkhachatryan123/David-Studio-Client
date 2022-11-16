@@ -11,6 +11,9 @@ export class IntroContentService {
   getData(url: string): [Observable<string>, Observable<string>] {
     let translationPath: string = 'template';
 
+    url = url.split('#')[0];
+    url = url.split('?')[0];
+
     let pathParts: string[] = url.split('/');
     pathParts.shift();
 
