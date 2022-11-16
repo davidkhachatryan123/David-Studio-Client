@@ -20,7 +20,7 @@
                          ],
             "scripts": [ "jquery/jquery.js", "jquery/jquery.easing.min.js",
                          "bootstrap/bootstrap.min.js",
-                         "src/js/main.js" ],
+                         "src/assets/js/main.js" ],
             "aot": true
           },
           "configurations": {

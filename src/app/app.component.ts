@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { TranslocoService } from '@ngneat/transloco';
 import { IntroContentService } from './tools/services/intro-content.service';
@@ -10,12 +10,11 @@ declare var $: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: [ "./app-css/app.component.main.css", "./app-css/app.component.navbar.css",
-               "./app-css/app.component.intro.css", "./app-css/app.component.phone.css",
-               "./app-css/app.component.footer.css" ],
+  styleUrls: [ "./app-css/app.component.navbar.css", "./app-css/app.component.intro.css",
+               "./app-css/app.component.phone.css", "./app-css/app.component.footer.css" ],
   providers: [ CookieService ]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterContentInit {
   language: string;
   title: string;
   subtitle: string;
@@ -41,6 +40,11 @@ export class AppComponent implements OnInit {
     });
 
     this.getSiteLanguage();
+  }
+
+  ngAfterContentInit() {
+    this.loadScript('assets/js/hexagon.js');
+    this.loadScript('assets/js/background-movement.js');
   }
 
   routeChanged(ev: any) {
@@ -74,5 +78,13 @@ export class AppComponent implements OnInit {
     this.cookie.set('lang', language, 1);
 
     this.transloco.setActiveLang(language);
+  }
+
+  loadScript(path: string) {
+      const node = document.createElement('script');
+      node.src = path;
+      node.type = 'text/javascript';
+      node.async = false;
+      document.getElementsByTagName('body')[0].appendChild(node);
   }
 }
