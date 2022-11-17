@@ -3,11 +3,10 @@
     "home": "Գլխավոր",
     "portfolio": "Պորտֆոլիո",
     "services": {
-      "services": "Ծառայություններ",
-      "web": "Վեբ",
-      "desktop": "Desktop",
-      "arduino": "Arduino",
-      "hosting": "Հոսթինգ"
+      "web": "Ծառայություններ | Վեբ",
+      "desktop": "Ծառայություններ | Desktop",
+      "arduino": "Ծառայություններ | Arduino",
+      "hosting": "Ծառայություններ | Հոսթինգ"
     },
     "contact": "Կապ"
   },

@@ -4,6 +4,7 @@ import { TranslocoService } from '@ngneat/transloco';
 import { IntroContentService } from './tools/services/intro-content.service';
 import { CookieService } from 'ngx-cookie-service';
 import { filter } from 'rxjs/operators';
+import { Title } from '@angular/platform-browser';
 
 declare var $: any;
 
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit, AfterContentInit {
   constructor(
     private router: Router,
     private transloco: TranslocoService,
+    private titleService: Title,
     private introContentService: IntroContentService,
     private cookie: CookieService) {
 
@@ -39,6 +41,12 @@ export class AppComponent implements OnInit, AfterContentInit {
 
       introContent[0].subscribe(value => this.title = value);
       introContent[1].subscribe(value => this.subtitle = value);
+
+      this.transloco.selectTranslate('title' + ((this.router.url !== '/') ?
+        (this.router.url as any).split('#')[0].split('?')[0].replaceAll('/', '.') :
+        '.home')
+      )
+      .subscribe((value: string) => this.titleService.setTitle(value));
     });
 
     this.getSiteLanguage();
