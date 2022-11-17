@@ -1,6 +1,15 @@
 {
   "title": {
-    "home": "Գլխավոր"
+    "home": "Գլխավոր",
+    "portfolio": "Պորտֆոլիո",
+    "services": {
+      "services": "Ծառայություններ",
+      "web": "Վեբ",
+      "desktop": "Desktop",
+      "arduino": "Arduino",
+      "hosting": "Հոսթինգ"
+    },
+    "contact": "Կապ"
   },
   "template": {
     "home": {

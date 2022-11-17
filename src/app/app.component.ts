@@ -30,13 +30,15 @@ export class AppComponent implements OnInit, AfterContentInit {
   }
 
   ngOnInit() {
-    this.router.events.subscribe(this.routeChanged);
+    this.router.events.subscribe(this.routeChangeStart);
 
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
-      this.introContentService.getData(this.router.url)[0].subscribe(value => this.title = value);
-      this.introContentService.getData(this.router.url)[1].subscribe(value => this.subtitle = value);
+      var introContent = this.introContentService.getData(this.router.url);
+
+      introContent[0].subscribe(value => this.title = value);
+      introContent[1].subscribe(value => this.subtitle = value);
     });
 
     this.getSiteLanguage();
@@ -47,7 +49,7 @@ export class AppComponent implements OnInit, AfterContentInit {
     this.loadScript('assets/js/background-movement.js');
   }
 
-  routeChanged(ev: any) {
+  routeChangeStart(ev: any) {
     if(ev instanceof NavigationStart) {
 
       if($('.navbar-collapse.in')[0] != undefined)
