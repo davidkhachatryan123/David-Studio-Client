@@ -1,4 +1,4 @@
-let back_radius = 35, front_radius = 60;
+let back_radius = 35, front_radius = 70;
 
 let back_chance = 0.40, front_chance = 0.15;
 
