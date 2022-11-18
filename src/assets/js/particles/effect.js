@@ -1,4 +1,6 @@
-let pointsCount = 70,
+let pointsCount_lg = 150,
+    pointsCount_md = 70,
+    pointsCount_xs = 20,
     pointsSpeed = 1,
     pointsColor = '#2b8265',
     pointsSize = 5;
@@ -15,6 +17,8 @@ let mousePoint = {
     trackMousePoint = false,
     points = [mousePoint];
 
+let intro = document.getElementById('intro');
+
 let canvas = document.getElementById('backLayer');
 let ctx = canvas.getContext('2d');
 
@@ -25,7 +29,7 @@ $(window).resize(function() {
 
 $(document).mousemove(function(event) {
   mousePoint.x = event.clientX;
-  mousePoint.y = event.clientY;
+  mousePoint.y = event.clientY + window.pageYOffset;
 });
 $(document).mouseenter(function () {
   trackMousePoint = true;
@@ -38,7 +42,7 @@ $(document).mouseleave(function () {
 function animation() {
   if(points.length < pointsCount) generatePoints(pointsCount - points.length);
 
-  ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+  ctx.clearRect(0, 0, intro.offsetWidth, intro.offsetHeight);
 
   if(trackMousePoint) drawCircle(mousePoint.x, mousePoint.y);
   else points.pop();
@@ -118,8 +122,12 @@ function map(value, fromSource, toSource, fromTarget, toTarget) {
 }
 
 function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  if(intro.offsetWidth > 1200) pointsCount = pointsCount_lg;
+  else if(intro.offsetWidth > 768) pointsCount = pointsCount_md;
+  else pointsCount = pointsCount_xs;
+
+  canvas.width = intro.offsetWidth;
+  canvas.height = intro.offsetHeight;
 
   ctx.fillStyle = pointsColor;
   ctx.strokeStyle = linesColor;
