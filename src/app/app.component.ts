@@ -53,8 +53,12 @@ export class AppComponent implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit() {
-    this.loadScript('assets/js/hexagon.js');
-    this.loadScript('assets/js/background-movement.js');
+    if(Math.floor(Math.random() * 2) === 0) {
+      this.loadScript('assets/js/particles/effect.js');
+    } else {
+      this.loadScript('assets/js/hexagon/effect.js');
+      this.loadScript('assets/js/hexagon/background-movement.js');
+    }
   }
 
   routeChangeStart(ev: any) {
