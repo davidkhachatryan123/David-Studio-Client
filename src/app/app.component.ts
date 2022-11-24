@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { TranslocoService } from '@ngneat/transloco';
-import { IntroContentService } from './tools/services/intro-content.service';
+import { IntroContentService } from './intro-content.service';
 import { CookieService } from 'ngx-cookie-service';
 import { filter } from 'rxjs/operators';
 import { Title } from '@angular/platform-browser';
@@ -53,12 +53,8 @@ export class AppComponent implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit() {
-    if(Math.floor(Math.random() * 2) === 0) {
-      this.loadScript('assets/js/particles/effect.js');
-    } else {
-      this.loadScript('assets/js/hexagon/effect.js');
-      this.loadScript('assets/js/hexagon/background-movement.js');
-    }
+    this.loadScript('assets/js/hexagon/effect.js');
+    this.loadScript('assets/js/hexagon/background-movement.js');
   }
 
   routeChangeStart(ev: any) {
@@ -81,8 +77,8 @@ export class AppComponent implements OnInit, AfterContentInit {
     this.language = this.cookie.get('lang');
 
     if(this.language === '') {
-      this.cookie.set('lang', 'am', 1);
-      this.language = 'am';
+      this.cookie.set('lang', 'hy-AM', 1);
+      this.language = 'hy-AM';
     }
     
     this.changeSiteLanguage(this.language);

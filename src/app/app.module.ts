@@ -14,9 +14,10 @@ import { ArduinoComponent } from './services/arduino/arduino.component';
 import { HostingComponent } from './services/hosting/hosting.component';
 import { ContactComponent } from './contact/contact.component';
 
-import { TranslocoRootModule } from './tools/transation/transloco-root.module';
+import { TranslocoRootModule } from './transation/transloco-root.module';
 
-import { IntroContentService } from './tools/services/intro-content.service';
+import { IntroContentService } from './intro-content.service';
+import { HomeService } from './home/services/home.service';
 
 const servicesRoutes: Routes = [
   { path: 'web', component: WebComponent },
@@ -40,7 +41,7 @@ const appRoutes: Routes = [
   declarations: [ AppComponent,
                   HomeComponent, PortfolioComponent, ContactComponent,
                   ServicesComponent, WebComponent, DesktopComponent, ArduinoComponent, HostingComponent ],
-  providers: [ Title, IntroContentService ],
+  providers: [ Title, IntroContentService, HomeService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
