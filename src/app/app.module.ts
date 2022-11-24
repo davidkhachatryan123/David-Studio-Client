@@ -19,6 +19,8 @@ import { TranslocoRootModule } from './transation/transloco-root.module';
 import { IntroContentService } from './intro-content.service';
 import { HomeService } from './home/services/home.service';
 
+import { ToHtmlPipe } from './pipes/to-html.pipe';
+
 const servicesRoutes: Routes = [
   { path: 'web', component: WebComponent },
   { path: 'desktop', component: DesktopComponent },
@@ -40,7 +42,8 @@ const appRoutes: Routes = [
              RouterModule.forRoot(appRoutes), TranslocoRootModule ],
   declarations: [ AppComponent,
                   HomeComponent, PortfolioComponent, ContactComponent,
-                  ServicesComponent, WebComponent, DesktopComponent, ArduinoComponent, HostingComponent ],
+                  ServicesComponent, WebComponent, DesktopComponent, ArduinoComponent, HostingComponent,
+                  ToHtmlPipe ],
   providers: [ Title, IntroContentService, HomeService ],
   bootstrap: [ AppComponent ]
 })
