@@ -6,6 +6,10 @@ const appRoutes: Routes = [
     path: '',
     pathMatch: 'full',
     loadChildren: () => import('./routing/home/home.module').then(module => module.HomeModule)
+  },
+  {
+    path: 'portfolio',
+    loadChildren: () => import('./routing/portfolio/portfolio.module').then(module => module.PortfolioModule)
   }
 ];
 

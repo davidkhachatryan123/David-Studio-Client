@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'portfolio',
-  templateUrl: './portfolio.component.html',
-  styleUrls: ['./portfolio.component.css', "./portfolio.component.colors.css"]
+  templateUrl: 'portfolio.component.html'
 })
 export class PortfolioComponent implements OnInit {
   constructor() { }
