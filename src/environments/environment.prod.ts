@@ -1,6 +1,7 @@
 export const environment = {
   production: true,
   config: {
-    apiUrl: ''
+    apiUrl: '',
+    languageCookieName: 'lang'
   }
 };
