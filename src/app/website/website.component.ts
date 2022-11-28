@@ -3,7 +3,7 @@ import { Router, NavigationStart, NavigationEnd, ChildrenOutletContexts } from '
 import { filter } from 'rxjs/operators';
 import { Title } from '@angular/platform-browser';
 import { TranslocoService } from '@ngneat/transloco';
-import { opacity } from './animations/animations';
+import { opacity } from './shared-module/animations/animations';
 
 import * as AOS from 'aos';
 
@@ -72,12 +72,34 @@ export class WebSiteComponent implements OnInit, AfterContentInit {
   }
 
   loadScript(path: string) {
-      const node = document.createElement('script');
-      node.src = path;
-      node.type = 'text/javascript';
-      node.async = false;
-      document.getElementsByTagName('body')[0].appendChild(node);
+    // if(this.isScriptLoaded(path)) this.removeScript(path);
+
+    const node = document.createElement('script');
+    node.src = path;
+    node.type = 'text/javascript';
+    node.async = false;
+
+    document.getElementsByTagName('body')[0].appendChild(node);
   }
+
+  /*isScriptLoaded(path: string) {
+    var scripts = document.getElementsByTagName('script');
+
+    for (var i = scripts.length; i--;) {
+        if (new URL(scripts[i].src).pathname == '/' + path) return true;
+    }
+
+    return false;
+  }
+
+  removeScript(path: string){
+    var scripts = document.getElementsByTagName('script');
+
+    for (var i = scripts.length; i--;) {
+      if (scripts[i] && scripts[i].getAttribute('src') != null && scripts[i].getAttribute('src').indexOf(path) != -1)
+        scripts[i].parentNode.removeChild(scripts[i]);
+    }
+  }*/
 
   getRouteAnimationData() {
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];

@@ -4,14 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { WebSiteComponent } from './website.component';
 
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { IntroComponent } from './components/intro/intro.component';
-import { PhoneComponent } from './components/phone/phone.component';
-import { FooterComponent } from './components/footer/footer.component';
-
 import { TranslocoRootModule } from './transation/transloco-root.module';
-
-import { IntroContentService } from './services/intro-content.service';
+import { SharedModule } from './shared-module/shared.module';
 
 const appRoutes: Routes = [
   {
@@ -43,8 +37,8 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forChild(appRoutes), HttpClientModule, TranslocoRootModule ],
-  declarations: [ WebSiteComponent, NavbarComponent, IntroComponent, PhoneComponent, FooterComponent ],
-  providers: [ IntroContentService ],
+  imports: [ RouterModule.forChild(appRoutes), SharedModule, HttpClientModule, TranslocoRootModule ],
+  declarations: [ WebSiteComponent ],
+  providers: [],
 })
 export class WebSiteModule { }
