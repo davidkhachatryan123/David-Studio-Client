@@ -1,8 +1,9 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
-import { Router, NavigationStart, NavigationEnd } from '@angular/router';
+import { Router, NavigationStart, NavigationEnd, ChildrenOutletContexts } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { Title } from '@angular/platform-browser';
 import { TranslocoService } from '@ngneat/transloco';
+import { opacity } from './animations/animations';
 
 import * as AOS from 'aos';
 
@@ -10,13 +11,17 @@ declare var $: any;
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  animations: [
+    opacity
+  ]
 })
 export class AppComponent implements OnInit, AfterContentInit {
   constructor(
     private router: Router,
     private titleService: Title,
-    private transloco: TranslocoService
+    private transloco: TranslocoService,
+    private contexts: ChildrenOutletContexts
 ) {}
 
   ngOnInit() {
@@ -72,5 +77,9 @@ export class AppComponent implements OnInit, AfterContentInit {
       node.type = 'text/javascript';
       node.async = false;
       document.getElementsByTagName('body')[0].appendChild(node);
+  }
+
+  getRouteAnimationData() {
+    return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
   }
 }

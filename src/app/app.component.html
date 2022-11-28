@@ -4,9 +4,9 @@
 
 <section class="content">
     <main id="page">
-        <router-outlet>
-            
-        </router-outlet>
+        <div [@routeAnimations]="getRouteAnimationData()">
+            <router-outlet></router-outlet>
+        </div>
     </main>
 
     <app-phone></app-phone>

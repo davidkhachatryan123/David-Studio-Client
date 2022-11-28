@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+
+  background-color: #0d171f;
+}
+
+h1 {
+  font-size: 35px;
+  color: white;
+}
+
+h1,
+.home-btn {
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.description {
+  font-size: 20px;
+  text-align: left;
+
+  margin: 10px 0;
+}
+
+.home-btn {
+  margin: 30px;
+  padding: 20px;
+
+  font-size: 20px;
+  text-transform: capitalize;
+
+  border-radius: 100px;
+}

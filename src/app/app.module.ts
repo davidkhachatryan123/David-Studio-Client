@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -15,7 +16,8 @@ import { TranslocoRootModule } from './transation/transloco-root.module';
 import { IntroContentService } from './services/intro-content.service';
 
 @NgModule({
-  imports: [ BrowserModule, RouterModule.forRoot([]), HttpClientModule, TranslocoRootModule, ContentModule ],
+  imports: [ BrowserModule,
+             HttpClientModule, TranslocoRootModule, BrowserAnimationsModule, ContentModule, RouterModule.forRoot([]) ],
   declarations: [ AppComponent, NavbarComponent, IntroComponent, PhoneComponent, FooterComponent ],
   bootstrap: [ AppComponent ],
   providers: [ IntroContentService ]
