@@ -25,12 +25,7 @@ export class NavbarComponent implements OnInit {
   setSiteLanguage() {
     this.language = this.cookie.get(environment.config.languageCookieName);
 
-    if(this.language === '') {
-      this.cookie.set(environment.config.languageCookieName, 'hy-AM', 1);
-      this.language = 'hy-AM';
-    }
-    
-    this.changeSiteLanguage(this.language);
+    this.changeSiteLanguage(this.language !== '' ? this.language : 'hy-AM');
   }
   changeSiteLanguage(language: string): void {
     this.language = language;

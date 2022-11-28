@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AngularResizeEventModule } from 'angular-resize-event';
 
@@ -12,7 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { IntroContentService } from './services/intro-content.service';
 
 @NgModule({
-  imports: [ RouterModule, AngularResizeEventModule ],
+  imports: [ BrowserModule, RouterModule, AngularResizeEventModule ],
   declarations: [ ContentIntroComponent,
                   NavbarComponent, IntroComponent, PhoneComponent, FooterComponent ],
   exports: [ ContentIntroComponent,
