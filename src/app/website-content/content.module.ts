@@ -15,6 +15,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [ RouterModule.forChild(appRoutes) ],
+  declarations: [],
   providers: [],
 })
 export class ContentModule { }

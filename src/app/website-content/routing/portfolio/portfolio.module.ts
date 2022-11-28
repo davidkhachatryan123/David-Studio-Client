@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { PortfolioComponent } from './portfolio.component';
-import { IntoductionComponent } from './components/introduction/introduction.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+
+import { SharedModule } from '../../shared-module/shared.module';
 
 @NgModule({
   imports: [ RouterModule.forChild([
@@ -12,7 +13,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
       pathMatch: 'full',
       component: PortfolioComponent
     }
-  ]) ],
-  declarations: [ PortfolioComponent, IntoductionComponent, ProjectsComponent ],
+  ]),
+  SharedModule ],
+  declarations: [ PortfolioComponent, ProjectsComponent ],
 })
 export class PortfolioModule { }

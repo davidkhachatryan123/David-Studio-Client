@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'portfolio',
   templateUrl: 'portfolio.component.html'
 })
-export class PortfolioComponent implements OnInit {
-  constructor() { }
-
-  ngOnInit(): void { }
+export class PortfolioComponent {
+  title: string = "Պորտֆոլիո";
+  subtitle: string = "Մենք նախագծում և զարգացնում ենք թվային ապրանքներ և առցանց փորձառություններ, որոնք օգնում են մեր հաճախորդներին աճել, նորարարություններ կատարել և փոխակերպվել: Մենք լսում, սովորում և հասկանում ենք նախքան կառուցելը: Մենք միասին բացահայտում ենք ձեր նպատակները, այնուհետև օգտագործում ենք մեր փորձը՝ գտնելու իրատեսական և ազդեցիկ այդ քաղցր կետը:";
 }

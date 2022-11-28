@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
-import { IntroductionComponent } from './components/introduction/introduction.component';
+
+import { SharedModule } from '../../shared-module/shared.module';
+
 import { ServicesComponent } from './components/services/services.component';
 import { LatestProjectsComponent } from './components/latest-projects/latest-projects.component';
 
@@ -13,7 +15,8 @@ import { LatestProjectsComponent } from './components/latest-projects/latest-pro
       pathMatch: 'full',
       component: HomeComponent
     }
-  ]) ],
-  declarations: [ HomeComponent, IntroductionComponent, ServicesComponent, LatestProjectsComponent ],
+  ]),
+  SharedModule ],
+  declarations: [ HomeComponent, ServicesComponent, LatestProjectsComponent ],
 })
 export class HomeModule { }
