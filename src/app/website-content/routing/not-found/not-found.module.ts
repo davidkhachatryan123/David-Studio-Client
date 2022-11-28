@@ -10,7 +10,7 @@ import { NotFoundComponent } from './not-found.component';
       pathMatch: 'full',
       component: NotFoundComponent
     }
-  ]) ],
+  ])],
   declarations: [ NotFoundComponent ],
 })
 export class NotFoundModule { }

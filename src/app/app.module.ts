@@ -15,6 +15,8 @@ import { TranslocoRootModule } from './transation/transloco-root.module';
 
 import { IntroContentService } from './services/intro-content.service';
 
+import { NotFoundComponent } from './website-content/routing/not-found/not-found.component';
+
 @NgModule({
   imports: [ BrowserModule,
              HttpClientModule, TranslocoRootModule, BrowserAnimationsModule, ContentModule, RouterModule.forRoot([]) ],
