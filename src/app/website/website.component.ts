@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd, ChildrenOutletContexts } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { Title } from '@angular/platform-browser';
@@ -16,7 +16,7 @@ declare var $: any;
     opacity
   ]
 })
-export class WebSiteComponent implements OnInit, AfterContentInit {
+export class WebSiteComponent implements OnInit {
   constructor(
     private router: Router,
     private titleService: Title,
@@ -53,11 +53,6 @@ export class WebSiteComponent implements OnInit, AfterContentInit {
     });
   }
 
-  ngAfterContentInit() {
-    this.loadScript('assets/js/hexagon/effect.js');
-    this.loadScript('assets/js/hexagon/background-movement.js');
-  }
-
   routeChangeStart(ev: any) {
     if($('.navbar-collapse.in')[0] != undefined)
       $('.navbar-toggle').click();
@@ -70,36 +65,6 @@ export class WebSiteComponent implements OnInit, AfterContentInit {
 
     }
   }
-
-  loadScript(path: string) {
-    // if(this.isScriptLoaded(path)) this.removeScript(path);
-
-    const node = document.createElement('script');
-    node.src = path;
-    node.type = 'text/javascript';
-    node.async = false;
-
-    document.getElementsByTagName('body')[0].appendChild(node);
-  }
-
-  /*isScriptLoaded(path: string) {
-    var scripts = document.getElementsByTagName('script');
-
-    for (var i = scripts.length; i--;) {
-        if (new URL(scripts[i].src).pathname == '/' + path) return true;
-    }
-
-    return false;
-  }
-
-  removeScript(path: string){
-    var scripts = document.getElementsByTagName('script');
-
-    for (var i = scripts.length; i--;) {
-      if (scripts[i] && scripts[i].getAttribute('src') != null && scripts[i].getAttribute('src').indexOf(path) != -1)
-        scripts[i].parentNode.removeChild(scripts[i]);
-    }
-  }*/
 
   getRouteAnimationData() {
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];

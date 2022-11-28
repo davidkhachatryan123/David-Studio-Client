@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AngularResizeEventModule } from 'angular-resize-event';
 
 import { ContentIntroComponent } from './components/content-intro/content-intro.component';
 
@@ -11,7 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { IntroContentService } from './services/intro-content.service';
 
 @NgModule({
-  imports: [ RouterModule ],
+  imports: [ RouterModule, AngularResizeEventModule ],
   declarations: [ ContentIntroComponent,
                   NavbarComponent, IntroComponent, PhoneComponent, FooterComponent ],
   exports: [ ContentIntroComponent,

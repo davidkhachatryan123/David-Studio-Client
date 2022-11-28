@@ -23,8 +23,9 @@
                       ],
             "scripts": [ "jquery/jquery.js", "jquery/jquery.easing.min.js",
                          "bootstrap/bootstrap.min.js",
+                         "node_modules/aos/dist/aos.js",
                          "src/assets/js/main.js",
-                         "node_modules/aos/dist/aos.js"
+                         "src/assets/js/background-movement.js"
                        ],
             "aot": true
           },
