@@ -19,10 +19,16 @@ export class IntroComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    var introContent = this.introContentService.getData(this.router.url);
+
+    introContent[0].subscribe(value => this.title = value);
+    introContent[1].subscribe(value => this.subtitle = value);
+
+
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((ev: any) => {
-      var introContent = this.introContentService.getData(ev.url);
+      var introContent = this.introContentService.getData(this.router.url);
 
       introContent[0].subscribe(value => this.title = value);
       introContent[1].subscribe(value => this.subtitle = value);

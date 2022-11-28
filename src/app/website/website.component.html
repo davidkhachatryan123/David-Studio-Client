@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+
+<app-intro></app-intro>
+
+<section class="content">
+    <main id="page">
+        <div [@routeAnimations]="getRouteAnimationData()">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+
+    <app-phone></app-phone>
+
+    <app-footer></app-footer>
+</section>
