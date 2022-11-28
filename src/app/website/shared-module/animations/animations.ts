@@ -2,7 +2,7 @@ import { trigger, transition, style, query, group, animate, animateChild } from 
 
 export const opacity =
   trigger('routeAnimations', [
-    transition('* <=> *', [
-      query(':leave', [ animate('0.5s ease-out', style({ opacity: 0 })) ])
+    transition('* => *', [
+      query(':leave', [ animate('0.2s ease-out', style({ opacity: 0 })) ], { optional: true })
     ])
   ]);

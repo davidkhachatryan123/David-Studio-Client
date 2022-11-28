@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { WebSiteComponent } from './website.component';
 
@@ -37,7 +38,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forChild(appRoutes), SharedModule, HttpClientModule, TranslocoRootModule ],
+  imports: [ RouterModule.forChild(appRoutes), SharedModule, HttpClientModule, TranslocoRootModule, BrowserAnimationsModule ],
   declarations: [ WebSiteComponent ],
   providers: [],
 })
