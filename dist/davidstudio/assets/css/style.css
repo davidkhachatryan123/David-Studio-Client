@@ -19,6 +19,8 @@
 
   --hr-color: #8c8b8b;
   --selection-color: #fcfcfc;
+
+  --popular-height: 60px;
 }
 
 * {

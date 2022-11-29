@@ -112,7 +112,7 @@
 
 @font-face {
   font-family: "MyFontAwesome";
-  src: url('../../../../../../assets/fontawesome-free-6.2.0-web/webfonts/fa-solid-900.ttf') format('truetype');
+  src: url('../../../../../../../packages/fontawesome-free-6.2.0-web/webfonts/fa-solid-900.ttf') format('truetype');
 }
 
 .tile .list ul li:before {
