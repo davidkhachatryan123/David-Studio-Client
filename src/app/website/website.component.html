@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 
-<app-intro></app-intro>
+<app-intro [title]="route | intro:'title' | async" [subtitle]="route | intro:'subtitle' | async"></app-intro>
 
 <section class="content">
     <main id="page">

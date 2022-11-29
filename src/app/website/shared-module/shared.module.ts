@@ -10,14 +10,16 @@ import { IntroComponent } from './components/intro/intro.component';
 import { PhoneComponent } from './components/phone/phone.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-import { IntroContentService } from './services/intro-content.service';
+import { IntroPipe } from './pipes/intro.pipe';
 
 @NgModule({
   imports: [ BrowserModule, RouterModule, AngularResizeEventModule ],
   declarations: [ ContentIntroComponent,
-                  NavbarComponent, IntroComponent, PhoneComponent, FooterComponent ],
+                  NavbarComponent, IntroComponent, PhoneComponent, FooterComponent,
+                  IntroPipe ],
   exports: [ ContentIntroComponent,
-             NavbarComponent, IntroComponent, PhoneComponent, FooterComponent ],
-  providers: [ IntroContentService ]
+             NavbarComponent, IntroComponent, PhoneComponent, FooterComponent,
+             IntroPipe ],
+  providers: [ ]
 })
 export class SharedModule { }

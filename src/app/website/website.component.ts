@@ -15,6 +15,8 @@ declare var $: any;
   ]
 })
 export class WebSiteComponent implements OnInit {
+  route: string;
+
   constructor(
     private router: Router,
     private titleService: Title,
@@ -27,6 +29,8 @@ export class WebSiteComponent implements OnInit {
       filter(event => event instanceof NavigationStart)
     ).subscribe(this.routeChangeStart);
     
+    this.route = this.router.url;
+
     this.transloco.selectTranslate('title' + ((this.router.url !== '/') ?
       (this.router.url as any).split('#')[0].split('?')[0].replaceAll('/', '.') : '.home')
     )
@@ -35,6 +39,8 @@ export class WebSiteComponent implements OnInit {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((ev: any) => {
+      this.route = ev.url;
+
       this.transloco.selectTranslate('title' + ((ev.url !== '/') ?
         (ev.url as any).split('#')[0].split('?')[0].replaceAll('/', '.') : '.home')
       )

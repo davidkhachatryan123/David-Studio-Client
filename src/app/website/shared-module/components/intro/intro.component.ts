@@ -1,7 +1,4 @@
-import { Component, OnInit, AfterContentInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
-import { IntroContentService } from '../../services/intro-content.service';
+import { Component, AfterContentInit, Input } from '@angular/core';
 import { ResizedEvent } from 'angular-resize-event';
 import { Hexagon } from './hexagon/hexagon';
 
@@ -11,34 +8,14 @@ import { Hexagon } from './hexagon/hexagon';
   styleUrls: [ 'intro.component.css' ]
 })
 
-export class IntroComponent implements OnInit, AfterContentInit {
-  title: string;
-  subtitle: string;
+export class IntroComponent implements AfterContentInit {
+  @Input() title: string;
+  @Input() subtitle: string;
 
   private hexagon: Hexagon;
 
-  constructor(
-    private router: Router,
-    private introContentService: IntroContentService,
-  ) {
+  constructor() {
     this.hexagon = new Hexagon();
-  }
-
-  ngOnInit() {
-    var introContent = this.introContentService.getData(this.router.url);
-
-    introContent[0].subscribe(value => this.title = value);
-    introContent[1].subscribe(value => this.subtitle = value);
-
-
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe((ev: any) => {
-      var introContent = this.introContentService.getData(this.router.url);
-
-      introContent[0].subscribe(value => this.title = value);
-      introContent[1].subscribe(value => this.subtitle = value);
-    });
   }
 
   ngAfterContentInit() {
