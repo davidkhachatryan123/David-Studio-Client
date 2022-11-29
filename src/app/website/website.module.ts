@@ -24,6 +24,11 @@ const appRoutes: Routes = [
         data: { animation: "portfolio" }
       },
       {
+        path: 'services',
+        loadChildren: () => import('./routing/services/services.module').then(module => module.ServicesModule),
+        data: { animation: "services" }
+      },
+      {
         path: 'contact',
         loadChildren: () => import('./routing/contact/contact.module').then(module => module.ContactModule),
         data: { animation: "contact" }

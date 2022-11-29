@@ -1,0 +1,128 @@
+.tiles {
+  padding: 50px 0;
+
+  background-color: var(--color-background);
+  color: var(--color-light);
+}
+
+.tile {
+  margin: 0px 20px;
+
+  background-color: var(--color-background-focused);
+  box-shadow: 0 20px 50px 0 #000;
+
+  width: 100%;
+  height: calc(auto + var(--popular-height));
+
+  transform: scale(1);
+  order: -1;
+}
+.tile.other {
+  margin-top: var(--popular-height) !important;
+  order: 0;
+}
+
+@media (min-width: 992px){
+  .tiles {
+      padding: 150px 0;
+  }
+
+  .tiles .container {
+      flex-wrap: nowrap;
+  }
+
+  .tile {
+      width: 300px;
+      order: 0;
+      transform: scale(1.1);
+  }
+}
+
+.tile .popular {
+  width: 100%;
+  height: var(--popular-height);
+  background-color: var(--accent-color);
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #fff;
+}
+
+.tile .tile-content {
+  padding: 20px 20px 100px 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tile .title h1 {
+  font-size: 35px;
+  font-weight: bold;
+  color: #f2f2f2;
+  text-transform: uppercase;
+}
+
+.tile .subtitle p {
+  font-size: 25px;
+  color: var(--colot-not-focused);
+  text-transform: lowercase;
+}
+
+.tile .hr {
+  width: 70%;
+
+  height: 1px;
+  border-style: solid;
+  border-width: 1px;
+  border-image-source: radial-gradient(circle at 50% 0,#fff,var(--color-dark));
+  border-image-slice: 1;
+
+  margin: 30px 0;
+}
+
+.tile .price .amount {
+  font-size: 50px;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+.tile .price .description {
+  font-size: 20px;
+  line-height: 3px;
+  color: var(--colot-not-focused);
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.tile .list {
+  margin-top: 30px;
+}
+
+.tile .list ul {
+  list-style: none;
+  padding: 0;
+}
+.tile .list ul li {
+  font-size: 18px;
+  color: var(--colot-not-focused);
+
+  padding-left: 2em;
+}
+
+@font-face {
+  font-family: "MyFontAwesome";
+  src: url('../../../../../../assets/fontawesome-free-6.2.0-web/webfonts/fa-solid-900.ttf') format('truetype');
+}
+
+.tile .list ul li:before {
+  font-family: "MyFontAwesome";
+  content: "\f00c";
+  font-size: 25px;
+  
+  display: inline-block;
+  margin-left: -2em;
+  width: 2em;
+
+  color: white;
+}
